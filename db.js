@@ -4,7 +4,7 @@ const { Schema, model } = mongoose;
 
 require('dotenv').config();
 
-mongoose.connect("mongodb+srv://polinaleg2003:IIIzPGUXys7fEb3a@cluster0.kl0sptb.mongodb.net/", {
+mongoose.connect(process.env.MONGODB_KEY, {
   serverSelectionTimeoutMS: 5000
 })
   .then(() => console.log('Connected'))
