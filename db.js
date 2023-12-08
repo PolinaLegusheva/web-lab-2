@@ -8,8 +8,8 @@ mongoose.connect(process.env.MONGODB_KEY, {
   serverSelectionTimeoutMS: 5000
 })
   .then(() => console.log('Connected'))
-  .catch((e) => {
-    console.log(e,"Connection error");
+  .catch(() => {
+    console.log("Connection error");
     process.exit()
   });
 
