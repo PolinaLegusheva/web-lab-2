@@ -18,6 +18,7 @@ mongoose.connect("mongodb+srv://polinaleg2003:IIIzPGUXys7fEb3a@cluster0.kl0sptb.
     content: String,
     date: String,
     startTime: String,
+    endTime: String,
   });
   
   const EventModel = model('Event', Event);

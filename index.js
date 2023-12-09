@@ -5,7 +5,7 @@ const { EventModel } = require('./db')
 
 app.use(bodyParser.json());
 
-app.post("/event", async (req, res) => {
+app.post("/events", async (req, res) => {
     try {
       const event = new EventModel(req.body);
       await event.save();
@@ -15,7 +15,7 @@ app.post("/event", async (req, res) => {
     }
 });
 
-app.get("/event", async (req, res) => {
+app.get("/events", async (req, res) => {
     try {
       const events = await EventModel.find();
       res.send(events);
@@ -24,7 +24,7 @@ app.get("/event", async (req, res) => {
     }
 });
 
-app.get("/event/:id", async (req, res) => {
+app.get("/events/:id", async (req, res) => {
     const id = req.params.id;
   
     try {

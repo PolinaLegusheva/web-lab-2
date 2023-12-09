@@ -11,5 +11,6 @@ module.exports = {
         "content": "one million BYN",
         "date": "15.12.2023",
         "startTime": "12:00",
+        "endTime": "14:59"
     }
 }
