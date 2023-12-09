@@ -5,7 +5,7 @@ const { EventModel } = require('./db')
 
 app.use(bodyParser.json());
 
-app.post("/events", async (req, res) => {
+app.post("/event", async (req, res) => {
     try {
       const event = new EventModel(req.body);
       await event.save();
@@ -15,7 +15,7 @@ app.post("/events", async (req, res) => {
     }
 });
 
-app.get("/events", async (req, res) => {
+app.get("/event", async (req, res) => {
     try {
       const events = await EventModel.find();
       res.send(events);
@@ -24,7 +24,7 @@ app.get("/events", async (req, res) => {
     }
 });
 
-app.get("/events/:id", async (req, res) => {
+app.get("/event/:id", async (req, res) => {
     const id = req.params.id;
   
     try {
@@ -38,7 +38,7 @@ app.get("/events/:id", async (req, res) => {
     }
 });
 
-app.put("/events/:id", async (req, res) => {
+app.put("/event/:id", async (req, res) => {
     const id = req.params.id;
   
     try {
@@ -55,7 +55,7 @@ app.put("/events/:id", async (req, res) => {
     }
 });
   
-app.patch("/events/:id", async (req, res) => {
+app.patch("/event/:id", async (req, res) => {
     const id = req.params.id;
   
     try {
@@ -72,7 +72,7 @@ app.patch("/events/:id", async (req, res) => {
     }
 });
   
-app.delete("/events/:id", async (req, res) => {
+app.delete("/event/:id", async (req, res) => {
     const id = req.params.id;
   
     try {
@@ -89,3 +89,5 @@ app.delete("/events/:id", async (req, res) => {
 app.listen(3000, () => {
     console.log('Starting the server on port 3000');
 });
+
+module.exports = app;
