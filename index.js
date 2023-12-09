@@ -9,7 +9,7 @@ app.post("/event", async (req, res) => {
     try {
       const event = new EventModel(req.body);
       await event.save();
-      res.status(201).send(event);
+      res.status(202).send(event);
     } catch (error) {
       res.status(400).send(error);
     }
